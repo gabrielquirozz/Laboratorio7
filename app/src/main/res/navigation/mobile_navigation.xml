@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.laboratorio7.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_anadirPregunta"
+            app:destination="@id/anadirPregunta" />
+        <action
+            android:id="@+id/action_nav_home_to_acercaDe"
+            app:destination="@id/acercaDe" />
+        <action
+            android:id="@+id/action_nav_home_to_preguntas"
+            app:destination="@id/preguntas" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.laboratorio7.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.laboratorio7.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="com.example.laboratorio7.ui.tools.ToolsFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.laboratorio7.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.example.laboratorio7.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/anadirPregunta"
+        android:name="com.example.laboratorio7.AnadirPregunta"
+        android:label="fragment_anadir_pregunta"
+        tools:layout="@layout/fragment_anadir_pregunta" />
+    <fragment
+        android:id="@+id/acercaDe"
+        android:name="com.example.laboratorio7.AcercaDe"
+        android:label="fragment_acerca_de"
+        tools:layout="@layout/fragment_acerca_de" >
+        <action
+            android:id="@+id/action_acercaDe_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/preguntas"
+        android:name="com.example.laboratorio7.Preguntas"
+        android:label="fragment_preguntas"
+        tools:layout="@layout/fragment_preguntas" >
+        <action
+            android:id="@+id/action_preguntas_to_resultados"
+            app:destination="@id/resultados" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultados"
+        android:name="com.example.laboratorio7.Resultados"
+        android:label="fragment_resultados"
+        tools:layout="@layout/fragment_resultados" />
+</navigation>
