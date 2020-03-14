@@ -3,79 +3,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/Main">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.laboratorio7.ui.home.HomeFragment"
+        android:id="@+id/Main"
+        android:name="com.example.encuesta.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_nav_home_to_anadirPregunta"
-            app:destination="@id/anadirPregunta" />
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/NuevaPregunta" />
         <action
-            android:id="@+id/action_nav_home_to_acercaDe"
-            app:destination="@id/acercaDe" />
+            android:id="@+id/action_nav_home_to_nav_share"
+            app:destination="@id/AcercaDe" />
         <action
-            android:id="@+id/action_nav_home_to_preguntas"
-            app:destination="@id/preguntas" />
+            android:id="@+id/action_nav_home_to_nav_slideshow"
+            app:destination="@id/Evaluacion" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.laboratorio7.ui.gallery.GalleryFragment"
+        android:id="@+id/NuevaPregunta"
+        android:name="com.example.encuesta.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_share"
+            app:destination="@id/AcercaDe" />
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_home"
+            app:destination="@id/Main" />
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_slideshow2"
+            app:destination="@id/Evaluacion" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.laboratorio7.ui.slideshow.SlideshowFragment"
+        android:id="@+id/Evaluacion"
+        android:name="com.example.encuesta.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_home"
+            app:destination="@id/Main" />
+        <action
+            android:id="@+id/Respuestas"
+            app:destination="@id/Resultados" />
+        <argument
+            android:name="preguntatoca"
+            app:argType="string"
+            android:defaultValue="default" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.laboratorio7.ui.tools.ToolsFragment"
+        android:id="@+id/Resultados"
+        android:name="com.example.encuesta.ui.tools.ToolsFragment"
         android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_tools" >
+        <action
+            android:id="@+id/action_nav_tools_to_nav_slideshow"
+            app:destination="@id/Evaluacion" />
+        <action
+            android:id="@+id/action_nav_tools_to_nav_home"
+            app:destination="@id/Main" />
+        <action
+            android:id="@+id/action_nav_tools_to_nav_send"
+            app:destination="@id/nav_send" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.laboratorio7.ui.share.ShareFragment"
+        android:id="@+id/AcercaDe"
+        android:name="com.example.encuesta.ui.share.ShareFragment"
         android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        tools:layout="@layout/fragment_share" >
+        <action
+            android:id="@+id/action_nav_share_to_nav_home"
+            app:destination="@id/Main" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.example.laboratorio7.ui.send.SendFragment"
+        android:name="com.example.encuesta.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
-    <fragment
-        android:id="@+id/anadirPregunta"
-        android:name="com.example.laboratorio7.AnadirPregunta"
-        android:label="fragment_anadir_pregunta"
-        tools:layout="@layout/fragment_anadir_pregunta" />
-    <fragment
-        android:id="@+id/acercaDe"
-        android:name="com.example.laboratorio7.AcercaDe"
-        android:label="fragment_acerca_de"
-        tools:layout="@layout/fragment_acerca_de" >
-        <action
-            android:id="@+id/action_acercaDe_to_nav_home"
-            app:destination="@id/nav_home" />
-    </fragment>
-    <fragment
-        android:id="@+id/preguntas"
-        android:name="com.example.laboratorio7.Preguntas"
-        android:label="fragment_preguntas"
-        tools:layout="@layout/fragment_preguntas" >
-        <action
-            android:id="@+id/action_preguntas_to_resultados"
-            app:destination="@id/resultados" />
-    </fragment>
-    <fragment
-        android:id="@+id/resultados"
-        android:name="com.example.laboratorio7.Resultados"
-        android:label="fragment_resultados"
-        tools:layout="@layout/fragment_resultados" />
 </navigation>
