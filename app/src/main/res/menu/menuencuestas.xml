@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/eliminarencuestas" android:title="Eliminar Encuestas"></item>
+    <item android:id="@+id/eliminarpreguntas" android:title="Eliminar Preguntas"></item>
+    <item android:id="@+id/eliminarrespuestas" android:title="Eliminar Respuestas"></item>
+
+
+
+
+</menu>
